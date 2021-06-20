@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Image, Text } from 'react-native';
+import { Image } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import AppLoading from 'expo-app-loading';
 import { Asset } from 'expo-asset'; 
 import { Ionicons } from '@expo/vector-icons';
 import * as Font from 'expo-font';
+
+import Stack from './navigation/Stack';
 
 const cacheImages = (images) => images.map((image) => {
   if (typeof image === 'string') { // case: url
@@ -30,9 +33,9 @@ export default function App() {
   const onFinish = () => setIsReady(true);
 
   return isReady ? (
-    <Text>
-      start to project.
-    </Text>
+    <NavigationContainer>
+      <Stack />
+    </NavigationContainer>
   ) : (
     <AppLoading
       startAsync={loadAssets}
