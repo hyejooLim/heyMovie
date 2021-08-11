@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Tab from './Tab';
-import Detail from '../components/Detail';
+import Detail from '../screens/Detail';
 
 const Stack = createStackNavigator();
 

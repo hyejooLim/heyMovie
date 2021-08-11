@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Movie from '../components/Movie';
-import TV from '../components/TV';
-import Favs from '../components/Favs';
-import Search from '../components/Search';
+import Movie from '../screens/Movie';
+import TV from '../screens/TV';
+import Favs from '../screens/Favs';
+import Search from '../screens/Search';
 
 const Tab = createBottomTabNavigator();
 
