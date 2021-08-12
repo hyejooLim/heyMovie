@@ -7,8 +7,8 @@ const TV = () => {
   const [tv, setTV] = useState({
     today: [],
     todayError: null,
-    weekday: [],
-    weekdayError: null,
+    thisweek: [],
+    thisweekError: null,
     popular: [],
     popularError: null,
     topRated: [],
@@ -16,14 +16,14 @@ const TV = () => {
   });
   const getData = async () => {
     const [today, todayError] = await tvApi.today();
-    const [weekday, weekdayError] = await tvApi.weekday();
+    const [thisweek, thisweekError] = await tvApi.thisweek();
     const [popular, popularError] = await tvApi.popular();
     const [topRated, topRatedError] = await tvApi.topRated();
     setTV({
       today,
       todayError,
-      weekday,
-      weekdayError,
+      thisweek,
+      thisweekError,
       popular,
       popularError,
       topRated,
