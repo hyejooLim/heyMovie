@@ -22,6 +22,8 @@ const getAnything = async (path, params = {}) => {
   }
 };
 
+export const getImageUrl = (path) => `https://image.tmdb.org/t/p/w500${path}`;
+
 export const movieApi = {
   nowPlaying: () => getAnything('/movie/now_playing'),
   popular: () => getAnything('/movie/popular'),

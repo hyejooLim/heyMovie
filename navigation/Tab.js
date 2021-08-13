@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Movie from '../screens/Movie';
+import Movie from '../screens/Movies/MovieContainer';
 import TV from '../screens/TV';
 import Favs from '../screens/Favs';
 import Search from '../screens/Search';
