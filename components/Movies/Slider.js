@@ -31,17 +31,17 @@ const Description = styled.View`
 `;
 
 const Title = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 const Votes = styled.Text`
   color: white;
   font-size: 12px;
   opacity: 0.7;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 const Overview = styled.Text`
@@ -49,7 +49,7 @@ const Overview = styled.Text`
   opacity: 0.7;
   font-weight: 500;
   text-align: justify;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 const Button = styled.View`
