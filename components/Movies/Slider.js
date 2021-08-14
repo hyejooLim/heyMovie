@@ -56,10 +56,6 @@ const Button = styled.View`
   background: #50AAF3;
   padding: 6px 10px;
   border-radius: 4px;
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 const Text = styled.Text`
@@ -68,13 +64,12 @@ const Text = styled.Text`
 
 const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
   const bgImageUrl = getImageUrl(bgImage);
-  const posterUrl = getImageUrl(poster);
 
   return (
     <Container>
       <BackgroundImage source={{ uri: bgImageUrl }} />
       <Content>
-        <Poster url={posterUrl} />
+        <Poster path={poster} />
         <Description>
           <Title>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</Title>
           <Votes>★ {votes} / 10</Votes>
