@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import Slider from '../../components/Movies/Slider';
 
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get('window');
 
 const Container = styled.View`
   flex: 1;
