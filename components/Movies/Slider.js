@@ -76,9 +76,9 @@ const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
       <Content>
         <Poster url={posterUrl} />
         <Description>
-          <Title>{title}</Title>
+          <Title>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</Title>
           <Votes>★ {votes} / 10</Votes>
-          <Overview>{overview.slice(0, 120)}...</Overview>
+          <Overview>{overview.length > 120 ? `${overview.slice(0, 120)}...` : overview}</Overview>
           <TouchableOpacity>
             <Button>
               <Text>See More</Text>
