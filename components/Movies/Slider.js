@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 
 import { getImageUrl } from '../../api';
+import { trimText } from '../utils';
 import Poster from '../Poster';
 
 const Container = styled.View`
@@ -71,9 +72,9 @@ const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
       <Content>
         <Poster path={poster} />
         <Description>
-          <Title>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</Title>
+          <Title>{trimText(title, 40)}</Title>
           <Votes>★ {votes} / 10</Votes>
-          <Overview>{overview.length > 120 ? `${overview.slice(0, 120)}...` : overview}</Overview>
+          <Overview>{trimText(overview, 120)}</Overview>
           <TouchableOpacity>
             <Button>
               <Text>See More</Text>

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import Poster from './Poster';
 import Vote from './Vote';
+import { trimText } from './utils';
 
 const Container = styled.View`
   margin-right: 15px;
@@ -22,7 +23,7 @@ const SubMovies = ({ id, poster, title, votes }) => {
     <TouchableOpacity>
       <Container>
         <Poster path={poster} />
-        <Title>{title.length > 12 ? `${title.slice(0, 12)}...` : title}</Title>
+        <Title>{trimText(title, 12)}</Title>
         <Vote votes={votes} />
       </Container>
     </TouchableOpacity>

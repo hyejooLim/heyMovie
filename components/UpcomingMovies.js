@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import Poster from './Poster';
 import Vote from './Vote';
+import { trimText } from './utils';
 
 const Container = styled.View`
   margin-bottom: 20px;
@@ -42,14 +43,10 @@ const UpcomingMovies = ({ id, poster, title, date, votes, overview }) => {
       <Container>
         <Poster path={poster} />
         <Description>
-          <Title>
-            {title.length > 20 ? `${title.slice(0, 20)}...` : title}
-          </Title>
+          <Title>{trimText(title, 20)}</Title>
           {date ? <Date>{date}</Date> : null}
           <Vote votes={votes} />
-          <OverView>
-            {overview.length > 120 ? `${overview.slice(0, 120)}...` : overview}
-          </OverView>
+          <OverView>{trimText(overview, 120)}</OverView>
         </Description>
       </Container>
     </TouchableOpacity>
