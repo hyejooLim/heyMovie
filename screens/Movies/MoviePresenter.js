@@ -6,6 +6,7 @@ import styled from 'styled-components/native';
 import Slider from '../../components/Movies/Slider';
 import Title from '../../components/Title';
 import SubMovies from '../../components/subMovies';
+import UpcomingMovies from '../../components/UpcomingMovies';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,14 +16,16 @@ const SliderWrapper = styled.View`
   margin-bottom: 50px;
 `;
 
-const Container = styled.View``;
+const Container = styled.View`
+  margin: 0 20px;
+`;
 
-const MoviePresenter = ({ loading, nowPlaying, popular }) => {
+const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
   return (
     <ScrollView
       style={{ backgroundColor: 'black' }}
       contentContainerStyle={{
-        flex: 1,
+        // flex: 1,
         justifyContent: loading ? 'center' : 'flex-start',
       }}
     >
@@ -49,19 +52,32 @@ const MoviePresenter = ({ loading, nowPlaying, popular }) => {
           <Container>
             <Title title={'Popular Movies'} />
             <ScrollView
-              style={{ marginLeft: 20 }}
+              style={{ marginBottom: 45 }}
               horizontal
               showsHorizontalScrollIndicator={false}
             >
               {popular.map((movie) => (
                 <SubMovies
                   key={movie.id}
+                  id={movie.id}
                   poster={movie.poster_path}
                   title={movie.title}
                   votes={movie.vote_average}
                 />
               ))}
             </ScrollView>
+            <Title title={'Coming Soon'} />
+            {upcoming.map((movie) => (
+              <UpcomingMovies
+                key={movie.id}
+                id={movie.id}
+                poster={movie.poster_path}
+                title={movie.title}
+                date={movie.release_date}
+                votes={movie.vote_average}
+                overview={movie.overview}
+              />
+            ))}
           </Container>
         </>
       )}
