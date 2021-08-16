@@ -6,7 +6,7 @@ const Votes = styled.Text`
   color: white;
   font-size: 12px;
   opacity: 0.7;
-  margin-top: 5px;
+  margin: 5px 0;
 `;
 
 const Vote = ({ votes }) => {

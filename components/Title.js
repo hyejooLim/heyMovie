@@ -6,7 +6,7 @@ const Text = styled.Text`
   color: white;
   font-size: 15px;
   font-weight: 600;
-  margin-left: 20px;
+  margin-bottom: 30px;
 `;
 
 const Title = ({ title }) => {

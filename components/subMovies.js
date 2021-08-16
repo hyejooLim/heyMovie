@@ -7,7 +7,7 @@ import Poster from './Poster';
 import Vote from './Vote';
 
 const Container = styled.View`
-  margin: 20px 15px 0 0;
+  margin-right: 15px;
   align-items: center;
 `;
 
