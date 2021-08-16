@@ -47,7 +47,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular }) => {
           </SliderWrapper>
 
           <Container>
-            <Title title='Popular Movies' />
+            <Title title={'Popular Movies'} />
             <ScrollView
               style={{ marginLeft: 20 }}
               horizontal
