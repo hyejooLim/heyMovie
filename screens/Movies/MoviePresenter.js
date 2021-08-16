@@ -10,7 +10,7 @@ import SubMovies from '../../components/subMovies';
 const { width, height } = Dimensions.get('window');
 
 const SliderWrapper = styled.View`
-  width: ${width}px;
+  width: 100%;
   height: ${height / 4}px;
   margin-bottom: 50px;
 `;
