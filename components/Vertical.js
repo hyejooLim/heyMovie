@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Poster from './Poster';
 import Vote from './Vote';
-import { trimText } from './utils';
+import { getDate, trimText } from './utils';
 
 const Container = styled.View`
   margin-bottom: 20px;
@@ -44,7 +44,7 @@ const Vertical = ({ id, poster, title, date, votes, overview }) => {
         <Poster path={poster} />
         <Description>
           <Title>{trimText(title, 20)}</Title>
-          {date ? <Date>{date}</Date> : null}
+          {date ? <Date>{getDate(date)}</Date> : null}
           <Vote votes={votes} />
           <OverView>{trimText(overview, 120)}</OverView>
         </Description>
