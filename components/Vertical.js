@@ -37,7 +37,7 @@ const OverView = styled.Text`
   opacity: 0.9;
 `;
 
-const UpcomingMovies = ({ id, poster, title, date, votes, overview }) => {
+const Vertical = ({ id, poster, title, date, votes, overview }) => {
   return (
     <TouchableOpacity>
       <Container>
@@ -53,7 +53,7 @@ const UpcomingMovies = ({ id, poster, title, date, votes, overview }) => {
   );
 };
 
-UpcomingMovies.propTypes = {
+Vertical.propTypes = {
   id: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -62,4 +62,4 @@ UpcomingMovies.propTypes = {
   overview: PropTypes.string.isRequired,
 };
 
-export default UpcomingMovies;
+export default Vertical;

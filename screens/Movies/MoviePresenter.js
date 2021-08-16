@@ -5,8 +5,8 @@ import styled from 'styled-components/native';
 
 import Slider from '../../components/Movies/Slider';
 import Title from '../../components/Title';
-import SubMovies from '../../components/subMovies';
-import UpcomingMovies from '../../components/UpcomingMovies';
+import Horizontal from '../../components/Horizontal';
+import Vertical from '../../components/Vertical';
 
 const { width, height } = Dimensions.get('window');
 
@@ -57,7 +57,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
               showsHorizontalScrollIndicator={false}
             >
               {popular.map((movie) => (
-                <SubMovies
+                <Horizontal
                   key={movie.id}
                   id={movie.id}
                   poster={movie.poster_path}
@@ -68,7 +68,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
             </ScrollView>
             <Title title={'Coming Soon'} />
             {upcoming.map((movie) => (
-              <UpcomingMovies
+              <Vertical
                 key={movie.id}
                 id={movie.id}
                 poster={movie.poster_path}
