@@ -17,7 +17,7 @@ const Title = styled.Text`
   font-weight: 500;
 `;
 
-const SubMovies = ({ poster, title, votes }) => {
+const SubMovies = ({ id, poster, title, votes }) => {
   return (
     <TouchableOpacity>
       <Container>
@@ -30,6 +30,7 @@ const SubMovies = ({ poster, title, votes }) => {
 };
 
 SubMovies.propTypes = {
+  id: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
