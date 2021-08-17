@@ -8,7 +8,7 @@ import Vote from './Vote';
 import { getDate, trimText } from './utils';
 
 const Container = styled.View`
-  margin-bottom: 20px;
+  margin: 0 0 20px 30px;
   flex-direction: row;
   align-items: center;
 `;
