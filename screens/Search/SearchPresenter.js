@@ -7,6 +7,7 @@ import Horizontal from '../../components/Horizontal';
 
 const Container = styled.ScrollView`
   background: black;
+  padding: 20px 0;
 `;
 
 const Text = styled.Text`
