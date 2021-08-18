@@ -38,7 +38,7 @@ const TV = () => {
     getData();
   }, []);
 
-  return <TvPresenter {...Tv} />;
+  return <TvPresenter {...Tv} getData={getData} />;
 };
 
 export default TV;

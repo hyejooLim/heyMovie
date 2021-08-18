@@ -20,9 +20,9 @@ const SliderWrapper = styled.View`
 
 const Container = styled.View``;
 
-const TvPresenter = ({ loading, today, thisweek, popular, topRated }) => {
+const TvPresenter = ({ loading, today, thisweek, popular, topRated, getData }) => {
   return (
-    <ScreenContainer loading={loading}>
+    <ScreenContainer loading={loading} getData={getData}>
       <SliderWrapper>
         <Swiper controlsEnabled={false} loop timeout={3}>
           {today.map((show) => (

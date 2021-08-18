@@ -34,7 +34,7 @@ const Movie = () => {
   }, []);
 
   return (
-    <MoviePresenter {...movies} />
+    <MoviePresenter {...movies} getData={getData} />
   );
 };
 
