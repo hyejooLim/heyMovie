@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Movie from '../screens/Movie/MovieContainer';
 import TV from '../screens/Tv/TvContainer';
 import Favs from '../screens/Favs';
-import Search from '../screens/Search';
+import Search from '../screens/Search/SearchContainer';
 
 const Tab = createBottomTabNavigator();
 
