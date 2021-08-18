@@ -32,8 +32,8 @@ const SearchPresenter = ({
         onChange={onChange}
         onSubmit={onSubmit}
       />
-      {loading ? null : <Text>{value}에 대한 검색 결과입니다.</Text>}
-      {searchMovie.length && (
+      {loading ? null : <Text>"{value}"에 대한 검색 결과입니다.</Text>}
+      {searchMovie.length !== 0 && (
         <HorizontalSlider title={'Movies'}>
           {searchMovie.map((movie) => (
             <Horizontal
@@ -46,7 +46,7 @@ const SearchPresenter = ({
           ))}
         </HorizontalSlider>
       )}
-      {searchTv.length && (
+      {searchTv.length !== 0 && (
         <HorizontalSlider title={'TV Shows'}>
           {searchTv.map((show) => (
             <Horizontal
