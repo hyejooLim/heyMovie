@@ -18,6 +18,9 @@ const Search = () => {
   };
 
   const onSubmitBtn = async () => {
+    if (!value || !value.trim()) {
+      return;
+    }
     const [searchMovie, searchMovieError] = await movieApi.search(value);
     const [searchTv, searchTvError] = await tvApi.search(value);
 
