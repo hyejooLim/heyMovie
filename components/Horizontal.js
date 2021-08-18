@@ -8,7 +8,7 @@ import Vote from './Vote';
 import { trimText } from './utils';
 
 const Container = styled.View`
-  margin-right: 15px;
+  margin-right: 20;
   align-items: center;
 `;
 
