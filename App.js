@@ -23,7 +23,7 @@ export default function App() {
 
   // function that return promise
   const loadAssets = async () => {
-    const images = cacheImages(['https://user-images.githubusercontent.com/71072930/122647723-944be700-d160-11eb-9511-a58c4354085c.jpeg',
+    const images = cacheImages(['https://images.unsplash.com/photo-1560109947-543149eceb16?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG1vdmllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
     require('./assets/splash.png')]);
     const icons = cacheFonts([Ionicons.font, Ionicons.font]);
     

@@ -90,7 +90,7 @@ Slider.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   bgImage: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
+  poster: PropTypes.string,
   votes: PropTypes.number.isRequired,
   overview: PropTypes.string.isRequired,
 };

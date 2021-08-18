@@ -55,7 +55,7 @@ const Vertical = ({ id, poster, title, date, votes, overview }) => {
 
 Vertical.propTypes = {
   id: PropTypes.number.isRequired,
-  poster: PropTypes.string.isRequired,
+  poster: PropTypes.string,
   title: PropTypes.string.isRequired,
   date: PropTypes.number,
   votes: PropTypes.number.isRequired,
