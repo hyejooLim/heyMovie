@@ -1,10 +1,17 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Detail = () => {
+const Detail = ({
+  navigation,
+  route: {
+    params: { id, title },
+  },
+}) => {
+  navigation.setOptions({ title });
+  
   return (
     <View>
-      <Text>Detail</Text>
+      <Text>{id}</Text>
     </View>
   );
 };

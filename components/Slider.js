@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
+import { useNavigation } from '@react-navigation/native';
 
 import { getImageUrl } from '../api';
 import { trimText } from './utils';
@@ -65,6 +66,10 @@ const Text = styled.Text`
 
 const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
   const bgImageUrl = getImageUrl(bgImage);
+  const navigation = useNavigation();
+  const onPress = () => {
+    navigation.navigate('Detail', { id, title });
+  };
 
   return (
     <Container>
@@ -75,7 +80,7 @@ const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
           <Title>{trimText(title, 40)}</Title>
           <Votes>★ {votes} / 10</Votes>
           <Overview>{trimText(overview, 120)}</Overview>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
             <Button>
               <Text>See More</Text>
             </Button>

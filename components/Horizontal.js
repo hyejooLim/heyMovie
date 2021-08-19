@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import PropTypes from 'prop-types';
+import { useNavigation } from '@react-navigation/native';
 
 import Poster from './Poster';
 import Vote from './Vote';
@@ -38,8 +39,13 @@ const OverView = styled.Text`
 `;
 
 const Horizontal = ({ id, poster, title, date, votes, overview }) => {
+  const navigation = useNavigation();
+  const onPress = () => {
+    navigation.navigate('Detail', { id, title });
+  };
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Container>
         <Poster path={poster} />
         <Description>

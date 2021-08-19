@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import styled from 'styled-components/native';
 import PropTypes from 'prop-types';
 
@@ -19,8 +20,13 @@ const Title = styled.Text`
 `;
 
 const Vertical = ({ id, poster, title, votes }) => {
+  const navigation = useNavigation();
+  const onPress = () => {
+    navigation.navigate('Detail', { id, title });
+  };
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Container>
         <Poster path={poster} />
         <Title>{trimText(title, 12)}</Title>
