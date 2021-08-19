@@ -89,7 +89,7 @@ const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
 Slider.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  bgImage: PropTypes.string.isRequired,
+  bgImage: PropTypes.string,
   poster: PropTypes.string,
   votes: PropTypes.number.isRequired,
   overview: PropTypes.string.isRequired,
