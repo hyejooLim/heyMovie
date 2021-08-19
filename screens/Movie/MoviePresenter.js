@@ -5,8 +5,8 @@ import styled from 'styled-components/native';
 
 import Slider from '../../components/Slider';
 import Title from '../../components/Title';
-import Horizontal from '../../components/Horizontal';
 import Vertical from '../../components/Vertical';
+import Horizontal from '../../components/Horizontal';
 import ScreenContainer from '../../components/ScreenContainer';
 import HorizontalSlider from '../../components/HorizontalSlider';
 
@@ -41,7 +41,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming, getData }) => 
       <Container>
         <HorizontalSlider title={'Popular Movies'}>
           {popular.map((movie) => (
-            <Horizontal
+            <Vertical
               key={movie.id}
               id={movie.id}
               poster={movie.poster_path}
@@ -52,7 +52,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming, getData }) => 
         </HorizontalSlider>
         <Title title={'Coming Soon'} />
         {upcoming.map((movie) => (
-          <Vertical
+          <Horizontal
             key={movie.id}
             id={movie.id}
             poster={movie.poster_path}

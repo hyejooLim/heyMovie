@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 import Input from '../../components/Input';
 import HorizontalSlider from '../../components/HorizontalSlider';
-import Horizontal from '../../components/Horizontal';
+import Vertical from '../../components/Vertical';
 
 const Container = styled.ScrollView`
   background: black;
@@ -36,7 +36,7 @@ const SearchPresenter = ({
       {searchMovie.length !== 0 && (
         <HorizontalSlider title={'Movies'}>
           {searchMovie.map((movie) => (
-            <Horizontal
+            <Vertical
               key={movie.id}
               id={movie.id}
               poster={movie.poster_path}
@@ -49,7 +49,7 @@ const SearchPresenter = ({
       {searchTv.length !== 0 && (
         <HorizontalSlider title={'TV Shows'}>
           {searchTv.map((show) => (
-            <Horizontal
+            <Vertical
               key={show.id}
               id={show.id}
               poster={show.poster_path}
