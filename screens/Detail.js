@@ -23,7 +23,7 @@ const BackgroundImage = styled.Image`
 const Content = styled.View`
   flex-direction: row;
   align-items: center;
-  top: 40px;
+  top: 30px;
   padding: 0 30px;
 `;
 
@@ -36,6 +36,7 @@ const Title = styled.Text`
   color: white;
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 10px;
 `;
 
 const Data = styled.View`
@@ -55,6 +56,7 @@ const DataValue = styled.Text`
   color: white;
   font-size: 17px;
   opacity: 0.7;
+  text-align: justify;
 `;
 
 const Detail = ({
