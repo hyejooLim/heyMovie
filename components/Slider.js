@@ -16,7 +16,7 @@ const Container = styled.View`
 const BackgroundImage = styled.Image`
   width: 100%;
   height: 100%;
-  opacity: 0.4;
+  opacity: 0.3;
   position: absolute;
 `;
 
