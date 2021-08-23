@@ -38,10 +38,18 @@ const OverView = styled.Text`
   opacity: 0.9;
 `;
 
-const Horizontal = ({ id, poster, title, date, votes, overview }) => {
+const Horizontal = ({
+  id,
+  poster,
+  title,
+  date,
+  votes,
+  overview,
+  isTv = false,
+}) => {
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Detail', { id, title, poster, votes, overview });
+    navigation.navigate('Detail', { id, title, poster, votes, overview, isTv });
   };
 
   return (

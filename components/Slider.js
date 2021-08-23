@@ -64,7 +64,7 @@ const Text = styled.Text`
   color: white;
 `;
 
-const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
+const Slider = ({ id, title, bgImage, poster, votes, overview, isTv = false }) => {
   const bgImageUrl = getImageUrl(bgImage);
   const navigation = useNavigation();
   const onPress = () => {
@@ -75,6 +75,7 @@ const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
       poster,
       votes,
       overview,
+      isTv,
     });
   };
 

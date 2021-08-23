@@ -55,6 +55,7 @@ const SearchPresenter = ({
               poster={show.poster_path}
               title={show.name}
               votes={show.vote_average}
+              isTv={true}
             />
           ))}
         </HorizontalSlider>

@@ -34,6 +34,7 @@ const TvPresenter = ({ loading, today, thisweek, popular, topRated, getData }) =
               poster={show.poster_path}
               votes={show.vote_average}
               overview={show.overview}
+              isTv={true}
             />
           ))}
         </Swiper>
@@ -47,6 +48,7 @@ const TvPresenter = ({ loading, today, thisweek, popular, topRated, getData }) =
               poster={show.poster_path}
               title={show.name}
               votes={show.vote_average}
+              isTv={true}
             />
           ))}
         </HorizontalSlider>
@@ -58,6 +60,7 @@ const TvPresenter = ({ loading, today, thisweek, popular, topRated, getData }) =
               poster={show.poster_path}
               title={show.name}
               votes={show.vote_average}
+              isTv={true}
             />
           ))}
         </HorizontalSlider>
@@ -70,6 +73,7 @@ const TvPresenter = ({ loading, today, thisweek, popular, topRated, getData }) =
             title={show.name}
             votes={show.vote_average}
             overview={show.overview}
+            isTv={true}
           />
         ))}
       </Container>

@@ -19,10 +19,10 @@ const Title = styled.Text`
   font-weight: 500;
 `;
 
-const Vertical = ({ id, poster, title, votes }) => {
+const Vertical = ({ id, poster, title, votes, isTv = false }) => {
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Detail', { id, title, poster, votes});
+    navigation.navigate('Detail', { id, title, poster, votes, isTv });
   };
 
   return (
