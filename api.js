@@ -39,6 +39,6 @@ export const tvApi = {
   thisweek: () => getAnything('/tv/on_the_air'),
   popular: () => getAnything('/tv/popular'),
   topRated: () => getAnything('/tv/top_rated'),
-  tv: (id) => getAnything(`/tv/${id}`),
+  show: (id) => getAnything(`/tv/${id}`),
   search: (text) => getAnything('/search/tv', { query: text }),
 };
