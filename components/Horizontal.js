@@ -41,7 +41,7 @@ const OverView = styled.Text`
 const Horizontal = ({ id, poster, title, date, votes, overview }) => {
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Detail', { id, title });
+    navigation.navigate('Detail', { id, title, poster, votes, overview });
   };
 
   return (

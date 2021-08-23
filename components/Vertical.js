@@ -22,7 +22,7 @@ const Title = styled.Text`
 const Vertical = ({ id, poster, title, votes }) => {
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Detail', { id, title });
+    navigation.navigate('Detail', { id, title, poster, votes});
   };
 
   return (

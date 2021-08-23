@@ -55,7 +55,7 @@ const Overview = styled.Text`
 `;
 
 const Button = styled.View`
-  background: #50AAF3;
+  background: #50aaf3;
   padding: 6px 10px;
   border-radius: 4px;
 `;
@@ -68,7 +68,14 @@ const Slider = ({ id, title, bgImage, poster, votes, overview }) => {
   const bgImageUrl = getImageUrl(bgImage);
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Detail', { id, title });
+    navigation.navigate('Detail', {
+      id,
+      title,
+      bgImageUrl,
+      poster,
+      votes,
+      overview,
+    });
   };
 
   return (
