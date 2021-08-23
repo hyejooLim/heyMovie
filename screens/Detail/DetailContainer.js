@@ -25,10 +25,11 @@ const Detail = ({
       ? await tvApi.show(id)
       : await movieApi.movie(id);
     const bgImageUrl = getImageUrl(detail.backdrop_path);
+    
     setDetails({
-      ...detail,
       loading: false,
       result: {
+        ...detail,
         title: detail.title || detail.name,
         bgImageUrl,
         poster: detail.poster_path,
