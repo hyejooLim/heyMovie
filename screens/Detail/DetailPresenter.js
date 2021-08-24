@@ -78,21 +78,21 @@ const DetailPresenter = ({ loading, result, openBrowser }) => {
           <Poster path={result.poster} />
           <Description>
             <Title>{result.title}</Title>
-            {result.release_date && <Date>{getDate(result.release_date)}</Date>}
+            {result.release_date ? <Date>{getDate(result.release_date)}</Date> : null}
             <Vote votes={result.votes} />
           </Description>
         </Content>
       </Container>
       <Data>
-        {result.production_countries && (
+        {result.production_countries ? (
           <>
             <DataName>Country</DataName>
             <DataValue>
               {result.production_countries.map((v) => `${v.name}`)}
             </DataValue>
           </>
-        )}
-        {result.genres && (
+        ) : null}
+        {result.genres ? (
           <>
             <DataName>Genres</DataName>
             <DataValue>
@@ -101,39 +101,39 @@ const DetailPresenter = ({ loading, result, openBrowser }) => {
               )}
             </DataValue>
           </>
-        )}
-        {result.status && (
+        ) : null}
+        {result.status ? (
           <>
             <DataName>Status</DataName>
             <DataValue>{result.status}</DataValue>
           </>
-        )}
-        {result.overview && (
+        ) : null}
+        {result.overview ? (
           <>
             <DataName>Overview</DataName>
             <DataValue>{result.overview}</DataValue>
           </>
-        )}
-        {result.runtime && (
+        ) : null}
+        {result.runtime ? (
           <>
             <DataName>Runtime</DataName>
             <DataValue>{result.runtime} minutes</DataValue>
           </>
-        )}
-        {result.first_air_date && (
+        ) : null}
+        {result.first_air_date ? (
           <>
             <DataName>First Air Date</DataName>
             <DataValue>{getDate(result.first_air_date)}</DataValue>
           </>
-        )}
-        {result.number_of_seasons && (
+        ) : null}
+        {result.number_of_seasons ? (
           <>
             <DataName>Episode / Season</DataName>
             <DataValue>
               {result.number_of_episodes} / {result.number_of_seasons}
             </DataValue>
           </>
-        )}
+        ) : null}
         {result.imdb_id ? (
           <>
             <DataName>Links</DataName>
@@ -152,7 +152,9 @@ const DetailPresenter = ({ loading, result, openBrowser }) => {
             {result.videos.results.map((v) => (
               <Link
                 key={v.id}
-                onPress={() => openBrowser(`https://www.youtube.com/watch?v=${v.key}`)}
+                onPress={() =>
+                  openBrowser(`https://www.youtube.com/watch?v=${v.key}`)
+                }
                 icon={'youtube-play'}
                 text={v.name}
               />
