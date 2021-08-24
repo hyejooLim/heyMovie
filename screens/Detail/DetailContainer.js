@@ -18,6 +18,9 @@ const Detail = ({
       poster,
       votes,
       overview,
+      videos: {
+        results: [],
+      },
     },
   });
 

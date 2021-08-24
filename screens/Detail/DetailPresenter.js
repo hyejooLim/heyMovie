@@ -49,7 +49,7 @@ const Date = styled.Text`
 `;
 
 const Data = styled.View`
-  margin-top: 70px;
+  margin: 40px 0 30px 0;
   padding: 0 30px;
 `;
 
@@ -59,6 +59,7 @@ const DataName = styled.Text`
   font-weight: 600;
   opacity: 0.9;
   margin-bottom: 10px;
+  margin-top: 30px;
 `;
 
 const DataValue = styled.Text`
@@ -66,7 +67,6 @@ const DataValue = styled.Text`
   font-size: 17px;
   opacity: 0.7;
   text-align: justify;
-  margin-bottom: 30px;
 `;
 
 const DetailPresenter = ({ loading, result, openBrowser }) => {
@@ -146,11 +146,22 @@ const DetailPresenter = ({ loading, result, openBrowser }) => {
             />
           </>
         ) : null}
+        {result.videos.results.length > 0 ? (
+          <>
+            <DataName>YouTube</DataName>
+            {result.videos.results.map((v) => (
+              <Link
+                key={v.id}
+                onPress={() => openBrowser(`https://www.youtube.com/watch?v=${v.key}`)}
+                icon={'youtube-play'}
+                text={v.name}
+              />
+            ))}
+          </>
+        ) : null}
       </Data>
     </ScreenContainer>
   );
 };
 
-// 1. <Link onPress={openBrowser} />
-// 2. <Link onPress={() => openBrowser()} />
 export default DetailPresenter;
