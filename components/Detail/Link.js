@@ -6,6 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 const Content = styled.View`
   flex-direction: row;
   align-items: center;
+  margin-bottom: 10px;
 `;
 
 const Text = styled.Text`
