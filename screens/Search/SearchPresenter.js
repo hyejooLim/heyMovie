@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import Input from '../../components/Input';
+import Input from '../../components/Search/Input';
 import HorizontalSlider from '../../components/HorizontalSlider';
 import Vertical from '../../components/Vertical';
 
