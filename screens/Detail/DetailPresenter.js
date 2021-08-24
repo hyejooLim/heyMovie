@@ -136,7 +136,7 @@ const DetailPresenter = ({ loading, result, openBrowser }) => {
         ) : null}
         {result.imdb_id ? (
           <>
-            <DataName>Links</DataName>
+            <DataName>Link</DataName>
             <Link
               onPress={() =>
                 openBrowser(`https://www.imdb.com/title/${result.imdb_id}`)
