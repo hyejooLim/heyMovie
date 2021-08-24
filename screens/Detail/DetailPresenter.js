@@ -6,6 +6,7 @@ import ScreenContainer from '../../components/ScreenContainer';
 import Poster from '../../components/Poster';
 import Vote from '../../components/Vote';
 import { getDate } from '../../components/utils';
+import Link from '../../components/Detail/Link';
 
 const { width, height } = Dimensions.get('window');
 
@@ -68,7 +69,7 @@ const DataValue = styled.Text`
   margin-bottom: 30px;
 `;
 
-const DetailPresenter = ({ loading, result }) => {
+const DetailPresenter = ({ loading, result, openBrowser }) => {
   return (
     <ScreenContainer loading={loading}>
       <Container>
@@ -128,12 +129,28 @@ const DetailPresenter = ({ loading, result }) => {
         {result.number_of_seasons && (
           <>
             <DataName>Episode / Season</DataName>
-            <DataValue>{result.number_of_episodes} / {result.number_of_seasons}</DataValue>
+            <DataValue>
+              {result.number_of_episodes} / {result.number_of_seasons}
+            </DataValue>
           </>
         )}
+        {result.imdb_id ? (
+          <>
+            <DataName>Links</DataName>
+            <Link
+              onPress={() =>
+                openBrowser(`https://www.imdb.com/title/${result.imdb_id}`)
+              }
+              icon={'imdb'}
+              text={'IMDB Page'}
+            />
+          </>
+        ) : null}
       </Data>
     </ScreenContainer>
   );
 };
 
+// 1. <Link onPress={openBrowser} />
+// 2. <Link onPress={() => openBrowser()} />
 export default DetailPresenter;

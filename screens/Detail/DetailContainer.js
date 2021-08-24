@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
+import * as WebBrowser from 'expo-web-browser';
 
 import DetailPresenter from '../Detail/DetailPresenter';
 import { getImageUrl, movieApi, tvApi } from '../../api';
@@ -25,7 +26,7 @@ const Detail = ({
       ? await tvApi.show(id)
       : await movieApi.movie(id);
     const bgImageUrl = getImageUrl(detail.backdrop_path);
-    
+
     setDetails({
       loading: false,
       result: {
@@ -47,7 +48,11 @@ const Detail = ({
     getData();
   }, [id]);
 
-  return <DetailPresenter {...details} />;
+  const openBrowser = async (url) => {
+    await WebBrowser.openBrowserAsync(url);
+  };
+
+  return <DetailPresenter {...details} openBrowser={openBrowser} />;
 };
 
 export default Detail;
