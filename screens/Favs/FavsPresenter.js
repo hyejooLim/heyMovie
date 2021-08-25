@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions, PanResponder, Animated } from 'react-native';
 import styled from 'styled-components/native';
 import { getImageUrl } from '../../api';
@@ -25,6 +25,7 @@ const styles = {
 };
 
 const FavsPresenter = ({ discover }) => {
+  const [topIndex, setTopIndex] = useState(0);
   const position = new Animated.ValueXY();
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
@@ -43,15 +44,32 @@ const FavsPresenter = ({ discover }) => {
 
   return (
     <Container>
-      {discover.reverse().map((v) => (
-        <Animated.View
-          key={v.id}
-          {...panResponder.panHandlers}
-          style={{ ...styles, transform: position.getTranslateTransform() }}
-        >
-          <Poster source={{ uri: getImageUrl(v.poster_path) }} />
-        </Animated.View>
-      ))}
+      {discover.map((v, idx) => {
+        if (idx === topIndex) {
+          return (
+            <Animated.View
+              key={v.id}
+              {...panResponder.panHandlers}
+              style={{
+                ...styles,
+                zIndex: 1,
+                transform: position.getTranslateTransform(),
+              }}
+            >
+              <Poster source={{ uri: getImageUrl(v.poster_path) }} />
+            </Animated.View>
+          );
+        }
+        return (
+          <Animated.View
+            key={v.id}
+            {...panResponder.panHandlers}
+            style={{ ...styles }}
+          >
+            <Poster source={{ uri: getImageUrl(v.poster_path) }} />
+          </Animated.View>
+        );
+      })}
     </Container>
   );
 };
