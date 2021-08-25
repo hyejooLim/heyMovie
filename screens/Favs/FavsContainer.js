@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
 
-import { movieApi } from '../api';
+import { movieApi } from '../../api';
+import FavsPresenter from './FavsPresenter';
 
 const Favs = () => {
   const [like, setLike] = useState({
@@ -16,15 +16,11 @@ const Favs = () => {
     });
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     getData();
   }, []);
 
-  return (
-    <View>
-      <Text>{like.discover?.length}</Text>
-    </View>
-  );
+  return <FavsPresenter {...like} />;
 };
 
 export default Favs;
