@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Dimensions } from 'react-native';
+import { Dimensions, PanResponder, Animated } from 'react-native';
 import styled from 'styled-components/native';
 import { getImageUrl } from '../../api';
 
@@ -11,26 +11,46 @@ const Container = styled.View`
   align-items: center;
 `;
 
-const Card = styled.View`
-  width: 90%;
-  height: ${height / 1.5}px;
-  position: absolute;
-  top: 50px; 
-`;
-
 const Poster = styled.Image`
   width: 100%;
   height: 100%;
   border-radius: 20px;
 `;
 
+const styles = {
+  width: '90%',
+  height: height / 1.5,
+  position: 'absolute',
+  top: 50,
+};
+
 const FavsPresenter = ({ discover }) => {
+  const position = new Animated.ValueXY();
+  const panResponder = PanResponder.create({
+    onStartShouldSetPanResponder: () => true,
+    onPanResponderMove: (evt, { dx, dy }) => {
+      position.setValue({ x: dx, y: dy });
+    },
+    onPanResponderRelease: () => {
+      Animated.spring(position, {
+        toValue: {
+          x: 0,
+          y: 0,
+        },
+      }).start();
+    },
+  });
+
   return (
     <Container>
       {discover.reverse().map((v) => (
-        <Card key={v.id}>
+        <Animated.View
+          key={v.id}
+          {...panResponder.panHandlers}
+          style={{ ...styles, transform: position.getTranslateTransform() }}
+        >
           <Poster source={{ uri: getImageUrl(v.poster_path) }} />
-        </Card>
+        </Animated.View>
       ))}
     </Container>
   );
