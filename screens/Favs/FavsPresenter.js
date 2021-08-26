@@ -41,7 +41,22 @@ const FavsPresenter = ({ discover }) => {
       }).start();
     },
   });
-
+  const rotationValue = position.x.interpolate({
+    inputRange: [-255, 0, 255],
+    outputRange: ['-10deg', '0deg', '10deg'],
+    extrapolate: 'clamp',
+  });
+  const secondCardOpacity = position.x.interpolate({
+    inputRange: [-255, 0, 255],
+    outputRange: [1, 0.2, 1],
+    extrapolate: 'clamp',
+  });
+  const secondCardScale = position.x.interpolate({
+    inputRange: [-255, 0, 255],
+    outputRange: [1, 0.7, 1],
+    extrapolate: 'clamp',
+  });
+  
   return (
     <Container>
       {discover.map((v, idx) => {
@@ -53,22 +68,41 @@ const FavsPresenter = ({ discover }) => {
               style={{
                 ...styles,
                 zIndex: 1,
-                transform: position.getTranslateTransform(),
+                transform: [
+                  { rotate: rotationValue },
+                  ...position.getTranslateTransform(),
+                ],
               }}
             >
               <Poster source={{ uri: getImageUrl(v.poster_path) }} />
             </Animated.View>
           );
+        } else if (idx === topIndex + 1) {
+          return (
+            <Animated.View
+              key={v.id}
+              {...panResponder.panHandlers}
+              style={{
+                ...styles,
+                zIndex: -idx,
+                opacity: secondCardOpacity,
+                transform: [{ scale: secondCardScale }],
+              }}
+            >
+              <Poster source={{ uri: getImageUrl(v.poster_path) }} />
+            </Animated.View>
+          );
+        } else {
+          return (
+            <Animated.View
+              key={v.id}
+              {...panResponder.panHandlers}
+              style={{ ...styles, zIndex: -idx, opacity: 0 }}
+            >
+              <Poster source={{ uri: getImageUrl(v.poster_path) }} />
+            </Animated.View>
+          );
         }
-        return (
-          <Animated.View
-            key={v.id}
-            {...panResponder.panHandlers}
-            style={{ ...styles }}
-          >
-            <Poster source={{ uri: getImageUrl(v.poster_path) }} />
-          </Animated.View>
-        );
       })}
     </Container>
   );
