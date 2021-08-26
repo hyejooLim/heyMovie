@@ -4,15 +4,15 @@ import { movieApi } from '../../api';
 import FavsPresenter from './FavsPresenter';
 
 const Favs = () => {
-  const [like, setLike] = useState({
-    discover: [],
-    discoverError: null,
+  const [movies, setMovies] = useState({
+    result: [],
+    resultError: null,
   });
   const getData = async () => {
-    const [discover, discoverError] = await movieApi.discover();
-    setLike({
-      discover,
-      discoverError,
+    const [result, resultError] = await movieApi.discover();
+    setMovies({
+      result,
+      resultError,
     });
   };
 
@@ -20,7 +20,7 @@ const Favs = () => {
     getData();
   }, []);
 
-  return <FavsPresenter {...like} />;
+  return <FavsPresenter {...movies} />;
 };
 
 export default Favs;

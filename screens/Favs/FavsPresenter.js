@@ -24,7 +24,7 @@ const styles = {
   top: 50,
 };
 
-const FavsPresenter = ({ discover }) => {
+const FavsPresenter = ({ result }) => {
   const [topIndex, setTopIndex] = useState(0);
   const nextCard = () => setTopIndex((prev) => prev + 1);
   const position = new Animated.ValueXY();
@@ -76,7 +76,7 @@ const FavsPresenter = ({ discover }) => {
 
   return (
     <Container>
-      {discover.map((v, idx) => {
+      {result.map((v, idx) => {
         if (idx < topIndex) { // 버려진 카드는 렌더링하지 않음
           return null;
         } else if (idx === topIndex) {
